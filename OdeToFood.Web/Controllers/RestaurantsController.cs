@@ -26,7 +26,7 @@ namespace OdeToFood.Web.Controllers
         public ActionResult Details(int id)
         {
             var model = db.Get(id);
-            if(model == null)
+            if (model == null)
             {
                 return View("NotFound");
             }
@@ -45,7 +45,7 @@ namespace OdeToFood.Web.Controllers
             if (ModelState.IsValid)
             {
                 db.Add(restaurant);
-                return View();
+                return RedirectToAction("Details", new { id = restaurant.Id });
             }
             return View();
         }
