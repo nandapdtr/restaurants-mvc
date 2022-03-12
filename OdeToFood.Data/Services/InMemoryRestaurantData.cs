@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using OdeToFood.Data.Models;
 
 namespace OdeToFood.Data.Services
@@ -25,6 +26,12 @@ namespace OdeToFood.Data.Services
         public Restaurant Get(int id)
         {
             return _restaurants.Find(x => x.Id == id);
+        }
+
+        public void Add(Restaurant restaurant)
+        {
+            _restaurants.Add(restaurant);
+            restaurant.Id = _restaurants.Max(r => r.Id) + 1;
         }
     }
 }
