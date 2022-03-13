@@ -31,7 +31,7 @@ namespace OdeToFood.Data.Services
 
         public IEnumerable<Restaurant> GetAll()
         {
-            return db.Restaurants;
+            return db.Restaurants.OrderBy(r => r.Name);
         }
 
         public void Update(Restaurant restaurant)
