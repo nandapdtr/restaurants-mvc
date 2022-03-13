@@ -37,11 +37,17 @@ namespace OdeToFood.Data.Services
         public void Update(Restaurant restaurant)
         {
             var existing = Get(restaurant.Id);
-            if(existing != null)
+            if (existing != null)
             {
                 existing.Name = restaurant.Name;
                 existing.Cuisine = restaurant.Cuisine;
             }
+        }
+
+        public void Delete(int id)
+        {
+            var restaurant = Get(id);
+            _restaurants.Remove(restaurant);
         }
     }
 }
