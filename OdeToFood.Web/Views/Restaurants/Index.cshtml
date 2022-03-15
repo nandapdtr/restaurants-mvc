@@ -2,6 +2,9 @@
 
 @{
     ViewBag.Title = "Index";
+    Page.Title = "Index";
+    //If we don't want to use default layout
+    //Layout = null;
 }
 
 <h2>Restaurants</h2>
@@ -31,3 +34,7 @@
 }
 
 </table>
+
+@section footer {
+    <div>Footer</div>
+}
